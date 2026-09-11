@@ -83,6 +83,7 @@ engine:
     - lua_translator@*number_translator  # 数字、金额大写
     - lua_translator@*calc_translator    # 计算器
     - lua_translator@*force_gc           # 暴力 GC
+    - lua_translator@*flypy_stats        # 输入统计（-tj 查询，依赖 lua/wanxiang/userdb.lua）
   filters:
     - lua_filter@*corrector                         # 错音错字提示
     - reverse_lookup_filter@radical_reverse_lookup  # 部件拆字滤镜
@@ -182,6 +183,14 @@ super_comment:
     sentence: "∞"        # 语法模型整句候选
     user_table: "+"      # 自定义短语（custom_phrase_double.txt 走此 type）
     user_phrase: "*"     # 用户词（script_translator 从 .userdb 学来的词）
+
+# 输入统计（lua_translator@*flypy_stats 读取）
+# 移植自万象拼音，精简为单一总档；依赖 lua/wanxiang/userdb.lua
+flypy_stats:
+  db_name: stats            # 统计数据库名 → 用户目录下 stats.userdb
+  trigger: "-tj"            # 查询触发词
+  continuous_gap_ms: 1000   # 峰速连续输入间隔阈值(ms)
+  average_gap_ms: 5000      # 均速会话间隔阈值(ms)
 
 
 # 主翻译器，拼音
@@ -332,6 +341,7 @@ recognizer:
     number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@*number_translator，数字金额大写
     calculator: "^cC.+"                 # 响应 lua_translator@*calc_translator，计算器。前缀设定项 calculator/prefix
     gregorian_to_lunar: "^N[0-9]{1,8}"  # 响应 lua_translator@*lunar，公历转农历
+    flypy_stats: "^-tj$"                # 响应 lua_translator@*flypy_stats，输入统计
 
 
 # 从 default 继承快捷键
@@ -358,7 +368,7 @@ editor:
 # 拼写设定
 speller:
   # 如果不想让什么标点直接上屏，可以加在 alphabet，或者编辑标点符号为两个及以上的映射
-  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`-
   # initials 定义仅作为始码的按键，排除 ` 让单个的 ` 可以直接上屏
   initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
   delimiter: " '"  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
