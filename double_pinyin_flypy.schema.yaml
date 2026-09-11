@@ -1,6 +1,6 @@
 # Rime schema
 # encoding: utf-8
-# 2026-09-11 改动：接入万象语法模型（grammar 段）+ 候选类型标注（sentence→∞ / user_table→+ / user_phrase→*），挂载 lua_filter@*sp_super_comment。
+# 2026-09-11 改动：接入万象语法模型（grammar 段）+ 候选类型标注（sentence→∞ / user_table→+ / user_phrase→*），挂载 lua_filter@*flypy_cand_comment。
 
 # 复制自 rime_ice.schema.yaml ，适配了双拼。
 # 双拼键位映射复制自 https://github.com/rime/rime-double-pinyin
@@ -92,7 +92,7 @@ engine:
     - simplifier@emoji                              # Emoji
     - simplifier@traditionalize                     # 简繁切换
     - lua_filter@*search@radical_pinyin             # 部件拆字辅码
-    - lua_filter@*sp_super_comment                  # 候选类型标注（读根级 super_comment，sentence→∞ 等）
+    - lua_filter@*flypy_cand_comment                # 候选类型标注（读根级 super_comment，sentence→∞ 等）
     - uniquifier                                    # 去重
 
 
@@ -173,7 +173,7 @@ grammar:
   weak_collocation_penalty: -100
   rear_penalty: -18
 
-# 候选类型标注（lua_filter@*sp_super_comment 读取）
+# 候选类型标注（lua_filter@*flypy_cand_comment 读取）
 # 键 = 候选 type，值 = 追加到注释末尾的标记
 #   sentence = 语法模型产生的整句候选
 #   table    = table_translator 词条候选（含自定义短语 custom_phrase_double.txt）

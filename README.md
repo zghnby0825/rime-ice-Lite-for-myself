@@ -84,7 +84,7 @@ rime-ice-Lite-formyself/
 ├── radical_pinyin.schema.yaml    # 部件拆字（反查/辅码）
 │
 ├── lua/                          # Lua 脚本
-│   ├── sp_super_comment.lua      # ★ 候选类型标注
+│   ├── flypy_cand_comment.lua    # ★ 候选类型标注
 │   ├── corrector.lua             #   错音错字提示
 │   ├── pin_cand_filter.lua       #   置顶候选项
 │   └── ...
@@ -167,7 +167,7 @@ wanxiang-lts-zh-hans.gram    # 约 400 MB
 
 ### 候选类型标注
 
-启用 `sp_super_comment.lua` 后，候选注释会显示来源标记：
+启用 `flypy_cand_comment.lua` 后，候选注释会显示来源标记：
 
 | 标记 | 含义 |
 |:----:|:-----|

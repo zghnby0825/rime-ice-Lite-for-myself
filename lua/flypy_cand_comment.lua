@@ -1,4 +1,4 @@
--- sp_super_comment.lua —— 按候选类型标注注释（仿万象 super_comment/cand_type 机制）
+-- flypy_cand_comment.lua —— 按候选类型标注注释（仿万象 super_comment/cand_type 机制）
 -- 2026-09-11 新建：候选类型标注滤镜（sentence→∞ / user_table→+ / user_phrase→*）。
 --
 -- 用途：启用语法模型（grammar）后，整句候选（type == "sentence"）由语言模型
@@ -12,7 +12,7 @@
 --       table: "+"         # 自定义短语（table_translator@custom_phrase）候选
 --
 -- 挂载方法（engine/filters，星号前缀 = lua/ 目录下的命名空间模块，无需 rime.lua 注册）：
---   - lua_filter@*sp_super_comment
+--   - lua_filter@*flypy_cand_comment
 --
 -- 说明：
 --   - 候选 type 由翻译器决定：script_translator 的整句候选为 "sentence"，
