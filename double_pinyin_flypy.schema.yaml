@@ -83,7 +83,7 @@ engine:
     - lua_translator@*number_translator  # 数字、金额大写
     - lua_translator@*calc_translator    # 计算器
     - lua_translator@*force_gc           # 暴力 GC
-    - lua_translator@*flypy_stats        # 输入统计（urtj 查询，依赖 lua/wanxiang/userdb.lua）
+    - lua_translator@*flypy_stats        # 输入统计（urtj 查询，依赖 lua/flypy/userdb.lua）
   filters:
     - lua_filter@*corrector                         # 错音错字提示
     - reverse_lookup_filter@radical_reverse_lookup  # 部件拆字滤镜
@@ -185,7 +185,7 @@ super_comment:
     user_phrase: "*"     # 用户词（script_translator 从 .userdb 学来的词）
 
 # 输入统计（lua_translator@*flypy_stats 读取）
-# 移植自万象拼音，精简为单一总档；依赖 lua/wanxiang/userdb.lua
+# 移植自万象拼音，精简为单一总档；依赖 lua/flypy/userdb.lua
 flypy_stats:
   db_name: stats            # 统计数据库名 → 用户目录下 stats.userdb
   trigger: "urtj"           # 查询触发词

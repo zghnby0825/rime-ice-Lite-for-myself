@@ -4,7 +4,7 @@
 --   · 保留峰速、字词分布、均速、平均编码、词组率
 --   · 去掉段位称号、多档查询（今日/周/月/年/生涯）、多设备统计、历史区间
 --
--- 依赖：lua/wanxiang/userdb.lua（万象的 LevelDB 薄封装）
+-- 依赖：lua/flypy/userdb.lua（LevelDB 薄封装，移植自万象）
 --
 -- 挂载（方案文件）：
 --   engine/translators:
@@ -18,7 +18,7 @@
 --     continuous_gap_ms: 1000     # 峰速连续输入间隔阈值
 --     average_gap_ms: 5000        # 均速会话间隔阈值
 
-local userdb = require("wanxiang/userdb")
+local userdb = require("flypy/userdb")
 
 local RECORD_SEPARATOR = " \t"
 local STATS_C_MAX = 2147483000
