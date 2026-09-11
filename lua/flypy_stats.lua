@@ -1,6 +1,6 @@
 -- flypy_stats.lua —— 输入统计（简化版 / 小鹤双拼专用）
 -- 移植自 万象拼音 amzxyz/rime-wanxiang 的 input_statistics.lua，精简为：
---   · 单一总档：-tj 输出全部累计
+--   · 单一总档：urtj 输出全部累计
 --   · 保留峰速、字词分布、均速、平均编码、词组率
 --   · 去掉段位称号、多档查询（今日/周/月/年/生涯）、多设备统计、历史区间
 --
@@ -14,7 +14,7 @@
 -- 配置（方案根级）：
 --   flypy_stats:
 --     db_name: stats              # 统计数据库名 → stats.userdb
---     trigger: "-tj"              # 查询触发词
+--     trigger: "urtj"             # 查询触发词
 --     continuous_gap_ms: 1000     # 峰速连续输入间隔阈值
 --     average_gap_ms: 5000        # 均速会话间隔阈值
 
@@ -531,7 +531,7 @@ local function init(env)
     env.schema_name = env.engine.schema.schema_name or "小鹤双拼"
     env.stats_db_name = config:get_string("flypy_stats/db_name") or "stats"
     if env.stats_db_name == "" then env.stats_db_name = "stats" end
-    env.trigger = config:get_string("flypy_stats/trigger") or "-tj"
+    env.trigger = config:get_string("flypy_stats/trigger") or "urtj"
     env.continuous_gap_ms = bounded_int(config, "flypy_stats/continuous_gap_ms",
         DEFAULT_CONTINUOUS_GAP_MS, 200, 5000)
     env.average_gap_ms = bounded_int(config, "flypy_stats/average_gap_ms",
