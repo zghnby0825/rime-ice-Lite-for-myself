@@ -85,7 +85,7 @@
 | 项目 | 内容 |
 |:-----|:-----|
 | **名称** | 小鹤主题（双拼） |
-| **作者** | [_647Uni](https://github.com/zghnby0825) |
+| **作者** | [_647Uni](https://github.com/zghnby0825) · 协助构建 [OpenClaw](https://github.com/openclaw/openclaw) |
 | **平台** | HarmonyOS（hmos） |
 | **版本** | v1.0.0 |
 | **更新** | 2026-06-06 |
