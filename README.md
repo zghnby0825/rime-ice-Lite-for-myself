@@ -80,7 +80,7 @@
 
 内置自制皮肤 **「小鹤主题（双拼）」**，专为鸿蒙 [超越输入法](https://appgallery.huawei.com/app/detail?id=app.flytype.hmos.bim) 打造。
 
-![小鹤主题预览](theme/res/preview.svg)
+![小鹤主题预览](themes/res/preview.svg)
 
 | 项目 | 内容 |
 |:-----|:-----|
@@ -102,13 +102,13 @@
 
 | 图标 | 用途 |
 |:-----|:-----|
-| `theme/res/To_Zh.svg` | 切回中文键盘 |
-| `theme/res/To_En.svg` | 切到英文键盘 |
-| `theme/res/yy.svg` | 语音识别 |
-| `theme/res/jt.svg` | 剪切板 |
-| `theme/res/bq.svg` | 表情 |
+| `themes/res/To_Zh.svg` | 切回中文键盘 |
+| `themes/res/To_En.svg` | 切到英文键盘 |
+| `themes/res/yy.svg` | 语音识别 |
+| `themes/res/jt.svg` | 剪切板 |
+| `themes/res/bq.svg` | 表情 |
 
-> 皮肤文件位于 `theme/`，布局定义见 `theme/theme.yaml`，元信息见 `theme/info.yaml`。
+> 皮肤文件位于 `themes/`，布局定义见 `themes/theme.yaml`，元信息见 `themes/info.yaml`。
 
 ---
 
