@@ -440,10 +440,20 @@ local function platform_info(name, version)
     local names = {
         Weasel="小狼毫", trime="同文输入法", hamster3="元书输入法",
         hamster="仓输入法", lyraime="灵韵输入法", xime="曦码输入法",
-        ["Cobra​"]="元书输入法(PC)", default="超越输入法",
+        ["Cobra​"]="元书输入法(PC)", bim="超越输入法",
+        flytype="超越输入法", ["hmos.bim"]="超越输入法",
+        default="超越输入法",
     }
     version = tostring(version or "")
-    return names[name] or name or "",
+    -- 容错：名称含 bim / flytype 时也判定为超越输入法
+    local lower = (name or ""):lower()
+    local mapped = names[name]
+    if not mapped then
+        if lower:find("bim", 1, true) or lower:find("flytype", 1, true) then
+            mapped = "超越输入法"
+        end
+    end
+    return mapped or name or "",
         version:match("^([vV]?%d+%.%d+%.%d+)") or version
 end
 
