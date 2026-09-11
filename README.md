@@ -101,11 +101,21 @@ rime-ice-Lite-formyself/
 
 ### 1. 安装前端
 
+**桌面端（Rime 原生）**
+
 | 平台 | 前端 |
 |:----:|:-----|
 | **Windows** | [小狼毫 Weasel](https://github.com/rime/weasel/releases) |
 | **macOS** | [鼠须管 Squirrel](https://github.com/rime/squirrel/releases) |
 | **Linux** | [ibus-rime](https://github.com/rime/ibus-rime) / [fcitx5-rime](https://github.com/fcitx/fcitx5-rime) |
+
+**移动端（小鹤双拼）**
+
+| 平台 | 输入法 |
+|:----:|:-------|
+| **HarmonyOS 鸿蒙** | [超越输入法](https://appgallery.huawei.com/app/detail?id=app.flytype.hmos.bim) |
+| **Android** | [同文输入法 Trime](https://github.com/osfans/trime) / [仓输入法](https://github.com/imfuxiao/Hamster) |
+| **iOS** | [仓输入法 Hamster](https://github.com/imfuxiao/Hamster) |
 
 ### 2. 部署配置
 
