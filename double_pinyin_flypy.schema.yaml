@@ -374,11 +374,6 @@ speller:
   delimiter: " '"  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
   algebra:
     - erase/^xx$/
-    # ===== 模糊音（平翘舌不分）2026-09-11 加 =====
-    # 【必须放在双拼规则之前】雾凇作者 iDvel 明确：双拼模糊音要插到 speller/algebra 最前面，
-    # 放末尾无效甚至导致双拼失效。
-    - derive/^([zcs])h/$1/
-    - derive/^([zcs])([^h])/$1h$2/
     - derive/^([jqxy])u$/$1v/
     - derive/^([aoe])([ioun])$/$1$1$2/
     - xform/^([aoe])(ng)?$/$1$1$2/
