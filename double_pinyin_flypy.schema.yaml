@@ -88,8 +88,7 @@ engine:
     - lua_filter@*corrector                         # 错音错字提示
     - reverse_lookup_filter@radical_reverse_lookup  # 部件拆字滤镜
     - lua_filter@*autocap_filter                    # 英文自动大写
-    - lua_filter@*pin_cand_filter                   # 置顶候选项（顺序要求：置顶候选项 > 长词优先 > Emoji > 简繁切换）
-    - lua_filter@*long_word_filter                  # 长词优先（顺序要求：长词优先 > Emoji）
+    - lua_filter@*pin_cand_filter                   # 置顶候选项（顺序要求：置顶候选项 > Emoji > 简繁切换）
     - lua_filter@*reduce_english_filter             # 降低部分英语单词在候选项的位置
     - simplifier@emoji                              # Emoji
     - simplifier@traditionalize                     # 简繁切换
@@ -161,13 +160,6 @@ reduce_english_filter:
 pin_cand_filter:
   # 格式：编码<Tab>字词1<Space>字词2……
   - d	的
-
-
-# Lua 配置: 长词优先
-# 提升 count 个长词，插入到第 idx 个位置。示例：输入 jie 得到「1.接 2.解 3.姐 4.饥饿 …」。
-long_word_filter:
-  count: 2
-  idx: 4
 
 
 # 万象语法模型（整句打分）：必须放方案根级，librime 的 Poet 以方案根配置创建 Grammar。
