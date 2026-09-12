@@ -129,7 +129,7 @@
 ## 📂 目录结构
 
 ```
-rime-ice-Lite-formyself/
+rime-ice-Lite-for-myself/
 ├── default.yaml                  # 全局设置、方案列表
 ├── double_pinyin_flypy.schema.yaml  # ★ 主方案（小鹤双拼）
 ├── rime_ice.dict.yaml            # 词库入口（挂载 cn_dicts/）
@@ -146,10 +146,13 @@ rime-ice-Lite-formyself/
 ├── en_dicts/                     # 英文词库
 │   ├── en.dict.yaml              #   英文主词库
 │   ├── en_ext.dict.yaml          #   英文扩展
-│   └── cn_en_flypy.txt           #   中英混输（小鹤键位）
+│   ├── cn_en.txt                 #   中英混输源表
+│   └── cn_en_flypy.txt           #   中英混输（小鹤键位，由 cn_en.txt 生成）
 │
 ├── melt_eng.schema.yaml          # 英文输入（次翻译器）
+├── melt_eng.dict.yaml            # 英文词库入口（挂载 en_dicts/）
 ├── radical_pinyin.schema.yaml    # 部件拆字（反查/辅码）
+├── radical_pinyin.dict.yaml      # 部件拆字码表
 │
 ├── lua/                          # Lua 脚本
 │   ├── flypy_cand_comment.lua    # ★ 候选类型标注
@@ -159,7 +162,8 @@ rime-ice-Lite-formyself/
 │   ├── pin_cand_filter.lua       #   置顶候选项
 │   └── ...
 │
-├── opencc/                       # 简繁 / Emoji 映射
+├── opencc/                       # Emoji 映射（emoji.json / emoji.txt / others.txt）
+├── themes/                       # 鸿蒙皮肤「小鹤主题（双拼）」
 ├── symbols_caps_v.yaml           # V 模式符号
 ├── weasel.yaml                   # 小狼毫前端配置
 └── squirrel.yaml                 # 鼠须管前端配置
