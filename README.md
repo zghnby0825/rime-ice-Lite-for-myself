@@ -39,10 +39,10 @@
 <tr>
 <td width="50%">
 
-**🔤 平翘舌模糊音**
-- `z/zh`、`c/ch`、`s/sh` 互容
-- 南方口音友好
-- 放在 `algebra` 最前，稳定生效
+**🔤 精准音节**
+- 拼音音节严格区分
+- 平翘舌各归其位
+- 候选窗口每页 6 个
 
 </td>
 <td width="50%">
@@ -244,17 +244,6 @@ wanxiang-lts-zh-hans.gram    # 约 400 MB
 | `∞` | **万象语法模型**整句候选 |
 | `+` | **自定义短语**（`custom_phrase_double.txt`） |
 | `*` | **用户词**（`.userdb` 学习所得） |
-
-### 模糊音（平翘舌）
-
-```yaml
-# 必须放在 speller/algebra 最前面！
-- derive/^([zcs])h/$1/          # zh→z, ch→c, sh→s
-- derive/^([zcs])([^h])/$1h$2/  # z→zh, c→ch, s→sh
-```
-
-> ⚠️ Rime 列表 patch 只能追加、不能前插，而模糊音有顺序要求。
-> **放末尾无效，甚至会破坏双拼**——务必置于 `algebra` 开头。
 
 ### 自定义短语
 
