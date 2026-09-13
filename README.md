@@ -9,7 +9,7 @@
 [![Rime](https://img.shields.io/badge/Rime-小狼毫-blue?style=flat-square)](https://rime.im/)
 [![双拼](https://img.shields.io/badge/双拼-小鹤-flypy?style=flat-square)](https://flypy.cc/)
 [![语法模型](https://img.shields.io/badge/语法模型-万象-9cf?style=flat-square)](https://github.com/amzxyz/rime-wanxiang)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](#-许可)
+[![License](https://img.shields.io/badge/License-GPL--3.0--only-blue?style=flat-square)](#-许可)
 
 </div>
 
@@ -325,10 +325,20 @@ WeaselDeployer.exe /deploy
 
 ## 📄 许可
 
-本项目基于 [MIT License](LICENSE) 开源。
+本仓库是 [雾凇拼音 rime-ice](https://github.com/iDvel/rime-ice) 的衍生产物，依上游授权整体以 **GPL-3.0 (only)** 发布，完整条款见 [LICENSE](LICENSE)。
 
-词库与方案部分来自 [雾凇拼音](https://github.com/iDvel/rime-ice)（MIT），
-语法模型来自 [万象拼音](https://github.com/amzxyz/rime-wanxiang)。
+> 上游许可证为 `GPL-3.0 (only)` —— 注意**不含**「or later」。本仓库有相当数量的文件与上游逐字节相同，或由上游文件修改而来，因此不适用比 GPL-3.0 更宽松的条款。
+
+### 第三方来源
+
+| 来源 | 用途 | 授权 |
+|:-----|:-----|:-----|
+| [雾凇拼音 rime-ice](https://github.com/iDvel/rime-ice) | 方案、词库、Lua 脚本主体 | GPL-3.0 (only) |
+| [rime-radical-pinyin](https://github.com/mirtlecn/rime-radical-pinyin) | 部件拆字方案、码表、`search.lua` | GPL-3.0 |
+| [万象拼音 rime-wanxiang](https://github.com/amzxyz/rime-wanxiang) | `lua/flypy_stats.lua`（输入统计，移植） | CC BY 4.0 |
+| [小鹤双拼](https://flypy.cc/) | 键位方案 | — |
+
+万象语法模型 `wanxiang-lts-zh-hans.gram` 为外部依赖，不随本仓库分发，使用前请自行获取。
 
 ---
 
