@@ -1,0 +1,28 @@
+# ── 助手工作区 ──
+# .workbuddy/ 存放会话记忆与工作数据，不进版本库
+.workbuddy/
+
+# ── 系统与编辑器 ──
+.DS_Store
+**/.idea/
+.vscode/
+
+# ── Rime 构建与运行产物 ──
+build/
+dist/
+sync/
+installation.yaml
+user.yaml
+*.userdb
+*.userdb/
+*.gram
+rime_console
+rime_deployer
+rime_patch
+
+# ── 本地补丁与私密内容 ──
+*.custom.yaml
+*private*
+
+# ── 临时文件 ──
+cn_dicts/temp.txt
